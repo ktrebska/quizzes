@@ -1,0 +1,26 @@
+.quizname {
+font-size:40px;
+text-align: center;}
+
+.quiz {
+    border: 1px solid black;
+    margin: 10px;
+    width: 700px;
+    padding: 10px;
+}
+
+.answer {
+    border: 1px solid black;
+    margin: 10px;
+    width: 90%;
+    padding: 10px;
+}
+
+.quiz .name {
+    font-size: 22px;
+}
+
+.quiz div {
+    margin: 10px;
+}
+

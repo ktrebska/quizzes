@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj quiz</title>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/register.css">
+
+
+</head>
+<body>
+
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    <form method="post" id="add-quiz-form" >
+        <input type="text" placeholder="Nazwa quizu" th:field="*{quiz.name}" class="name">
+        <br>
+       <input type="text" placeholder="Pytanie" th:field="*{question.question}" class="quiz">
+        <br>
+        <input type="text" placeholder="Odpowiedź 1" th:object="${a1}" th:field="*{answer1}" id="answer1" name="a1" class="quiz">
+        <input type="checkbox" th:object="${a1}" th:field="*{a1}">
+        <br>
+        <input type="text" placeholder="Odpowiedź 2" th:object="${a1}" th:field="*{answer2}" id="answer2" name="a2" class="quiz">
+        <input type="checkbox" th:object="${a1}" th:field="*{a2}">
+        <br>
+        <input type="text" placeholder="Odpowiedź 3" th:object="${a1}" th:field="*{answer3}" id="answer3" name="a3" class="quiz">
+        <input type="checkbox" th:object="${a1}" th:field="*{a3}">
+        <br>
+        <input type="text" placeholder="Odpowiedź 4" th:object="${a1}" th:field="*{answer4}" id="answer4" name="a4" class="quiz">
+        <input type="checkbox" th:object="${a1}" th:field="*{a4}">
+
+        <input type="submit" value="Dodaj" class="quiz">
+<!--        Dodaj pytanie-->
+<!--        <input type="button" value="+" onclick="addQuestion()">-->
+    </form>
+</div>
+</body>
+</html>

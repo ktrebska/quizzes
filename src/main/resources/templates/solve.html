@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/common.css">
+    <script src="/result.js"></script>
+
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    <form method="post" id="solve-form">
+        <div th:text="${currentQuiz.getName()}" class="quizname"></div>
+        <div th:each="question : ${currentQuiz.getQuestions()}" class="quiz">
+            <div th:text="${question.getQuestion()}" class="name"></div>
+            <div th:each="answer : ${question.getAnswers()}" class="answer">
+                <input type="checkbox" th:text="${answer.getAnswer()}" th:value="${answer.getId()}" th:class="check" th:id="${answer.getId()}" th:field="*{ans.answer}" >
+<!--                <div a th:text="${answer.getAnswer()}" class="name"></div>-->
+            </div>
+        </div>
+
+        <input type="submit" value="Prześlij">
+    </form>
+</div>
+
+</body>
+</html>
